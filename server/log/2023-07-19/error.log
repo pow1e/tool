@@ -1,0 +1,2 @@
+[tools/server]2023/07/19 - 15:58:43.601	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:50	创建快捷指令失败	{"error": "快捷方式的指令不能为空"}
+[tools/server]2023/07/19 - 17:03:29.176	[31merror[0m	D:/Language/Go/Go_code/src/tools/core/server.go:40	listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.

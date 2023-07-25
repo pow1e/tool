@@ -1,0 +1,9 @@
+[tools/server]2023/07/17 - 20:48:21.862	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:93	运行失败！	{"error": "当前id不存在，请重试"}
+[tools/server]2023/07/17 - 21:40:23.658	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:93	运行失败！	{"error": "当前id不存在，请重试"}
+[tools/server]2023/07/17 - 22:42:14.321	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:93	运行失败！	{"error": "当前id不存在，请重试"}
+[tools/server]2023/07/17 - 23:29:59.334	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:93	运行失败！	{"error": "当前id不存在，请重试"}
+[tools/server]2023/07/17 - 23:30:05.300	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:93	运行失败！	{"error": "当前id不存在，请重试"}
+[tools/server]2023/07/17 - 23:30:23.315	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:98	运行失败！	{"error": "当前id不存在，请重试"}
+[tools/server]2023/07/17 - 23:31:35.185	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:102	运行失败！	{"error": "当前id不存在，请重试"}
+[tools/server]2023/07/17 - 23:31:49.374	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:102	运行失败！	{"error": "当前id不存在，请重试"}
+[tools/server]2023/07/17 - 23:44:14.900	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:102	运行失败！	{"error": "当前id不存在，请重试"}

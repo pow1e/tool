@@ -1,0 +1,36 @@
+[tools/server]2023/07/20 - 15:38:49.088	[34minfo[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/rainbowTable.go:56	构建彩虹表用时7.8001511s秒
+[tools/server]2023/07/20 - 15:38:49.101	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/init_rainbowTable.go:21	初始化彩虹表用时7.8139001s秒
+[tools/server]2023/07/20 - 15:38:49.104	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/20 - 15:51:41.059	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/20 - 15:51:53.824	[34minfo[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/rainbowTable.go:56	构建彩虹表用时8.2976814s秒
+[tools/server]2023/07/20 - 15:51:53.848	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/init_rainbowTable.go:21	初始化彩虹表用时8.3222777s秒
+[tools/server]2023/07/20 - 15:51:53.851	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/20 - 15:53:26.895	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/20 - 15:53:54.953	[34minfo[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/rainbowTable.go:56	构建彩虹表用时9.9978648s秒
+[tools/server]2023/07/20 - 15:53:54.967	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/init_rainbowTable.go:21	初始化彩虹表用时23.4744663s秒
+[tools/server]2023/07/20 - 15:53:54.969	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/20 - 15:54:15.252	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/20 - 15:54:50.892	[34minfo[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/rainbowTable.go:56	构建彩虹表用时10.231937s秒
+[tools/server]2023/07/20 - 15:54:50.906	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/init_rainbowTable.go:21	初始化彩虹表用时12.6832827s秒
+[tools/server]2023/07/20 - 15:54:50.908	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/20 - 15:56:29.495	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/20 - 15:56:45.075	[34minfo[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/rainbowTable.go:56	构建彩虹表用时9.7972739s秒
+[tools/server]2023/07/20 - 15:56:45.099	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/init_rainbowTable.go:21	初始化彩虹表用时12.4560515s秒
+[tools/server]2023/07/20 - 15:56:45.104	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/20 - 15:58:09.740	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/20 - 15:58:25.070	[34minfo[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/rainbowTable.go:56	构建彩虹表用时10.1517828s秒
+[tools/server]2023/07/20 - 15:58:25.085	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/init_rainbowTable.go:21	初始化彩虹表用时11.8905001s秒
+[tools/server]2023/07/20 - 15:58:25.087	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/20 - 15:58:49.124	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/20 - 15:59:03.312	[34minfo[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/rainbowTable.go:56	构建彩虹表用时9.5114962s秒
+[tools/server]2023/07/20 - 15:59:03.327	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/init_rainbowTable.go:21	初始化彩虹表用时10.9542343s秒
+[tools/server]2023/07/20 - 15:59:03.329	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/20 - 16:00:50.302	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/20 - 16:01:06.217	[34minfo[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/rainbowTable.go:56	构建彩虹表用时10.2807581s秒
+[tools/server]2023/07/20 - 16:01:06.233	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/init_rainbowTable.go:21	初始化彩虹表用时12.807095s秒
+[tools/server]2023/07/20 - 16:01:06.235	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/20 - 16:01:21.567	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/20 - 16:01:34.507	[34minfo[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/rainbowTable.go:56	构建彩虹表用时7.5130922s秒
+[tools/server]2023/07/20 - 16:01:34.519	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/init_rainbowTable.go:21	初始化彩虹表用时7.5250933s秒
+[tools/server]2023/07/20 - 16:01:34.521	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/20 - 16:03:33.982	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...

@@ -1,0 +1,31 @@
+basePath: /
+definitions:
+  response.Response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      msg:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: This is a sample Server pets
+  title: Swagger Example API
+  version: 0.0.1
+paths:
+  /check/mysql:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 查询mysql是否启动
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: 查询mysql是否启动
+      tags:
+      - 快捷指令
+swagger: "2.0"

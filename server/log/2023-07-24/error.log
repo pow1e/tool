@@ -1,0 +1,17 @@
+[tools/server]2023/07/24 - 11:12:14.116	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:12:14.118	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:101	运行失败！	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:13:39.045	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:13:39.045	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:101	运行失败！	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:15:18.741	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:15:18.753	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:101	运行失败！	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:18:33.573	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:18:33.574	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:101	运行失败！	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:19:00.355	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:19:00.357	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:101	运行失败！	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:19:09.018	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:19:09.018	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:101	运行失败！	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:19:18.946	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:101	运行失败！	{"error": "The operation was canceled by the user."}
+[tools/server]2023/07/24 - 11:19:25.577	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:19:25.579	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:101	运行失败！	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:20:17.511	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/24 - 11:20:17.514	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:101	运行失败！	{"error": "exit status 1"}

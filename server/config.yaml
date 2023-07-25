@@ -1,0 +1,28 @@
+# 系统配置
+system:
+  env: public
+  addr: 8080
+  router-prefix: ""
+
+# 日志配置
+zap:
+  level: info
+  prefix: '[tools/server]'
+  format: console
+  director: log
+  encode-level: LowercaseColorLevelEncoder
+  stacktrace-key: stacktrace
+  max-age: 0 # 最大存活时间
+  show-line: true
+  log-in-console: true
+
+# 本地保存位置
+local:
+  path: static/
+  store-path: static/
+
+# 是否项目初始化读取文件
+rainbow-table:
+  init-status: false # 是否启动时初始化彩虹表
+  rainbowTable-path: /static/dict/md5.txt # 彩虹表保存地址
+  update-flush: false # 保存字典后是否立即生效

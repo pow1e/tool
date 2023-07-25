@@ -1,0 +1,25 @@
+{
+  "shortcut": [
+    {
+      "id": "4ee3fd1b-d31b-4904-9e80-c4217a08e369",
+      "name": "启动mysql",
+      "description": "描述",
+      "directives": "net start mysql80",
+      "type": "1"
+    },
+    {
+      "id": "d1584024-af6c-4191-82cc-0dbaa6709b2e",
+      "name": "213213",
+      "description": "312312",
+      "directives": "321321321",
+      "type": "0"
+    },
+    {
+      "id": "f9665c08-605a-4f56-bf08-19a7fe2dec2c",
+      "name": "123",
+      "description": "32131",
+      "directives": "1",
+      "type": "0"
+    }
+  ]
+}

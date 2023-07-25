@@ -1,0 +1,11 @@
+[tools/server]2023/07/18 - 14:56:58.750	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:42	绑定参数失败	{"error": "json: cannot unmarshal number into Go struct field Shortcut.type of type string"}
+[tools/server]2023/07/18 - 15:11:38.682	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:98	运行失败！	{"error": "当前id不存在，请重试"}
+[tools/server]2023/07/18 - 15:53:30.966	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:63	获取快捷直径失败!	{"error": "暂无此快捷指令"}
+[tools/server]2023/07/18 - 15:55:33.949	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:63	获取快捷直径失败!	{"error": "暂无此快捷指令"}
+[tools/server]2023/07/18 - 16:34:59.503	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:50	创建快捷指令失败	{"error": "快捷方式的指令不能为空"}
+[tools/server]2023/07/18 - 16:35:08.309	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:42	绑定参数失败	{"error": "invalid character '}' looking for beginning of object key string"}
+[tools/server]2023/07/18 - 16:35:15.646	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:50	创建快捷指令失败	{"error": "快捷方式的类型只能为0或为1"}
+[tools/server]2023/07/18 - 17:15:01.559	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/18 - 17:15:01.560	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:100	运行失败！	{"error": "exit status 1"}
+[tools/server]2023/07/18 - 17:15:04.952	[31merror[0m	D:/Language/Go/Go_code/src/tools/pkg/utils/users/run_shell.go:46	命令输出错误	{"error": "exit status 1"}
+[tools/server]2023/07/18 - 17:15:04.952	[31merror[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:100	运行失败！	{"error": "exit status 1"}

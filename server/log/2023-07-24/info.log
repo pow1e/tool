@@ -1,0 +1,44 @@
+[tools/server]2023/07/24 - 11:06:01.672	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/24 - 11:06:01.827	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:06:27.128	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:06:28.997	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:06:30.417	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:06:39.499	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:80	修改快捷指令：{4ee3fd1b-d31b-4904-9e80-c4217a08e369 12312321312 描述 tasklist /FI "IMAGENAME eq mysqld.exe" 0}
+
+[tools/server]2023/07/24 - 11:07:08.992	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:07:38.724	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:08:23.359	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:08:34.147	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:08:58.884	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:09:00.730	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:09:13.960	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:80	修改快捷指令：{4ee3fd1b-d31b-4904-9e80-c4217a08e369 123 描述 tasklist /FI "IMAGENAME eq mysqld.exe" 1}
+
+[tools/server]2023/07/24 - 11:09:48.941	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:80	修改快捷指令：{4ee3fd1b-d31b-4904-9e80-c4217a08e369 123 描述 net start mysql80 1}
+
+[tools/server]2023/07/24 - 11:10:11.773	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:80	修改快捷指令：{4ee3fd1b-d31b-4904-9e80-c4217a08e369 启动mysql 描述 net start mysql80 1}
+
+[tools/server]2023/07/24 - 11:10:18.285	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:10:41.656	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:80	修改快捷指令：{f9665c08-605a-4f56-bf08-19a7fe2dec2c 123 32131 1 0}
+
+[tools/server]2023/07/24 - 11:13:06.586	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:13:45.728	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:14:45.317	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:14:52.419	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:18:20.347	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/24 - 11:18:23.285	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/24 - 11:18:27.868	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:18:55.006	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/24 - 11:18:58.534	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/24 - 11:19:16.059	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 11:19:21.410	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/24 - 11:19:23.142	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/24 - 11:19:52.541	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/24 - 11:19:54.221	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/24 - 11:20:17.527	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
+[tools/server]2023/07/24 - 22:55:40.994	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:43	server run success on 	{"address": ":8080"}
+[tools/server]2023/07/24 - 22:56:16.196	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 22:58:14.522	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 22:58:15.200	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 22:58:57.627	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 22:58:58.524	[34minfo[0m	D:/Language/Go/Go_code/src/tools/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/24 - 23:07:07.792	[34minfo[0m	D:/Language/Go/Go_code/src/tools/core/server.go:57	server exiting ...
