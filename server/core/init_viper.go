@@ -13,7 +13,6 @@ import (
 func InitViper() *viper.Viper {
 	v := viper.New()
 	v.SetConfigFile("config.yaml")
-	v.SetConfigType("yaml")
 	err := v.ReadInConfig()
 	if err != nil {
 		panic(fmt.Errorf("读取文件失败！: %s \n", err))
@@ -22,6 +21,12 @@ func InitViper() *viper.Viper {
 	v.WatchConfig()
 	v.OnConfigChange(func(e fsnotify.Event) {
 		fmt.Println("config file changed:", e.Name)
+		// 文件发生变化时重新读取配置
+		if err = v.ReadInConfig(); err != nil {
+			fmt.Println("Failed to read config file:", err)
+			panic(err.Error())
+		}
+
 		if err = v.Unmarshal(&global.Config); err != nil {
 			err = window.ErrorWindow(window.ErrorCommon())
 			if err != nil {
@@ -30,6 +35,9 @@ func InitViper() *viper.Viper {
 			fmt.Println(err.Error())
 			panic(err.Error())
 		}
+
+		// 重新生效路由
+		RunServer()
 	})
 
 	// 赋值
@@ -39,12 +47,12 @@ func InitViper() *viper.Viper {
 	}
 
 	// 读取用户信息文件
-	ReadSettings(v)
+	ReadSettings()
 	return v
 }
 
-func ReadSettings(v *viper.Viper) {
-
+func ReadSettings() {
+	v := viper.New()
 	v.SetConfigFile(consts.SettingName)
 
 	// 启动监听

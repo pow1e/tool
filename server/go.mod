@@ -8,8 +8,6 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
 	github.com/spf13/viper v1.16.0
-	github.com/swaggo/files v1.0.1
-	github.com/swaggo/gin-swagger v1.6.0
 	github.com/swaggo/swag v1.16.1
 	go.uber.org/zap v1.24.0
 	golang.org/x/text v0.11.0
@@ -30,6 +28,7 @@ require (
 	github.com/go-playground/validator/v10 v10.14.1 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
+
 	github.com/jonboulle/clockwork v0.4.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
