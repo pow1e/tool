@@ -1,0 +1,22 @@
+[tools/server]2023/07/27 - 13:07:02.044	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:60	Server run success on 	{"address": ":8080"}
+[tools/server]2023/07/27 - 13:07:46.350	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:77	Server exiting ...
+[tools/server]2023/07/27 - 13:07:47.676	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:60	Server run success on 	{"address": ":8080"}
+[tools/server]2023/07/27 - 13:08:45.919	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/api/v1/shortcut.go:80	修改快捷指令：{d1584024-af6c-4191-82cc-0dbaa6709b2e 123123 12312 123123 1}
+
+[tools/server]2023/07/27 - 13:09:28.443	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/27 - 13:09:52.521	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/api/v1/shortcut.go:61	获取快捷指令:
+[tools/server]2023/07/27 - 13:10:07.820	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:77	Server exiting ...
+[tools/server]2023/07/27 - 13:12:45.499	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:60	Server run success on 	{"address": ":8080"}
+[tools/server]2023/07/27 - 13:12:52.754	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:77	Server exiting ...
+[tools/server]2023/07/27 - 13:13:02.896	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:60	Server run success on 	{"address": ":8080"}
+[tools/server]2023/07/27 - 13:13:52.988	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:77	Server exiting ...
+[tools/server]2023/07/27 - 13:13:54.547	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:60	Server run success on 	{"address": ":8080"}
+[tools/server]2023/07/27 - 13:14:15.024	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/pkg/utils/rainbowTable.go:56	构建彩虹表用时7.8219964s秒
+[tools/server]2023/07/27 - 13:16:55.233	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:77	Server exiting ...
+[tools/server]2023/07/27 - 13:16:59.451	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:60	Server run success on 	{"address": ":8080"}
+[tools/server]2023/07/27 - 13:17:07.839	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/pkg/utils/rainbowTable.go:56	构建彩虹表用时7.1338893s秒
+[tools/server]2023/07/27 - 13:17:36.178	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/api/v1/shortcut.go:37	获取快捷指令:
+[tools/server]2023/07/27 - 13:17:39.440	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/api/v1/shortcut.go:37	获取快捷指令:1
+[tools/server]2023/07/27 - 13:19:26.634	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/api/v1/shortcut.go:56	修改快捷指令：{2ede742b-b9ce-47fb-9e7f-6089656a34ba 123123 12312 asdasdasdas 1}
+
+[tools/server]2023/07/27 - 13:20:11.727	[34minfo[0m	D:/Language/Go/Go_code/src/tool/server/core/server.go:77	Server exiting ...
