@@ -12,30 +12,6 @@ import (
 	"tools/service"
 )
 
-// CheckMysql 检查mysql服务是否启动，返回进程具体信息
-func CheckMysql(ctx *gin.Context) {
-	srv := service.GetSysSrv()
-	res, err := srv.CheckMysql()
-	if err != nil {
-		global.Log.Error(err.Error())
-		response.FaithWithMessage(err.Error(), ctx)
-		return
-	}
-	response.OkWithDetailed("查询成功", res, ctx)
-}
-
-// CheckRedis 检查redis服务是否启动，返回进程具体信息
-func CheckRedis(ctx *gin.Context) {
-	srv := service.GetSysSrv()
-	res, err := srv.CheckRedis()
-	if err != nil {
-		global.Log.Error(err.Error())
-		response.FaithWithMessage(err.Error(), ctx)
-		return
-	}
-	response.OkWithDetailed("查询成功", res, ctx)
-}
-
 // CreateShortcut 创建快捷指令
 func CreateShortcut(ctx *gin.Context) {
 	var req *system.Shortcut

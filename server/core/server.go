@@ -10,7 +10,7 @@ import (
 	"os/signal"
 	"time"
 	"tools/global"
-	"tools/router"
+	"tools/initialize"
 )
 
 // 定义sever接口 实现ListenAndServe方法
@@ -33,7 +33,7 @@ func RunServer() {
                                                        
                                                        
                                                        `)
-	routers := router.Routers() // 初始化路由
+	routers := initialize.Routers() // 初始化路由
 	address := fmt.Sprintf(":%s", global.Config.System.Addr)
 
 	// 先关闭上一次的服务器（如果存在）
