@@ -4,46 +4,48 @@
  * @Author: William
  * @Date: 2023-07-12 15:27:12
  * @LastEditors: William
- * @LastEditTime: 2023-07-21 08:58:56
+ * @LastEditTime: 2023-07-26 14:20:39
 -->
 <template>
-  <el-button type="primary" size="large" class="top-button" @click="dv = true">
-    新增配置
-  </el-button>
-  <div class="main-area">
-    <el-scrollbar height="425px">
-      <el-empty description="暂无数据，请新增配置" v-if="!data" />
-      <Card v-for="item in data" :key="item" :title="item.name" :desc="item.description" :command="item.directives"
-        :permit="item.type.toString()" :id="item.id" :handle-update-data="handleUpdateData" v-bind:get-data="getList"/>
-    </el-scrollbar>
+  <div class="qc">
+    <el-button type="primary" size="large" class="top-button" @click="dv = true">
+      新增配置
+    </el-button>
+    <div class="main-area" v-loading="loading">
+      <el-scrollbar height="425px">
+        <el-empty description="暂无数据，请新增配置" v-if="!data" />
+        <Card v-for="item in data" :key="item" :title="item.name" :desc="item.description" :command="item.directives"
+          :permit="item.type.toString()" :id="item.id" :handle-update-data="handleUpdateData" v-bind:get-data="getList" />
+      </el-scrollbar>
+    </div>
+    <el-dialog v-model="dv" title="新增配置" width="50%" draggable align-center destroy-on-close>
+      <el-form label-width="80px">
+        <el-form-item label="服务名称">
+          <el-input v-model="serviceTitle"></el-input>
+        </el-form-item>
+        <el-form-item label="服务描述">
+          <el-input v-model="serviceDesc"></el-input>
+        </el-form-item>
+        <el-form-item label="启动命令">
+          <el-input v-model="serviceComm"></el-input>
+        </el-form-item>
+        <el-form-item label="权限">
+          <el-radio-group v-model="radio">
+            <el-radio label="0">管理员</el-radio>
+            <el-radio label="1">普通用户</el-radio>
+          </el-radio-group>
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="dv = false">取 消</el-button>
+          <el-button type="primary" @click="submit">
+            确 认
+          </el-button>
+        </span>
+      </template>
+    </el-dialog>
   </div>
-  <el-dialog v-model="dv" title="新增配置" width="50%" draggable align-center destroy-on-close>
-    <el-form label-width="80px">
-      <el-form-item label="服务名称">
-        <el-input v-model="serviceTitle"></el-input>
-      </el-form-item>
-      <el-form-item label="服务描述">
-        <el-input v-model="serviceDesc"></el-input>
-      </el-form-item>
-      <el-form-item label="启动命令">
-        <el-input v-model="serviceComm"></el-input>
-      </el-form-item>
-      <el-form-item label="权限">
-        <el-radio-group v-model="radio">
-          <el-radio label="0">管理员</el-radio>
-          <el-radio label="1">普通用户</el-radio>
-        </el-radio-group>
-      </el-form-item>
-    </el-form>
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="dv = false">取 消</el-button>
-        <el-button type="primary" @click="submit">
-          确 认
-        </el-button>
-      </span>
-    </template>
-  </el-dialog>
 </template>
 
 <script lang="ts" setup>
@@ -57,6 +59,8 @@ const serviceTitle = ref(null)
 const serviceDesc = ref(null)
 const serviceComm = ref(null)
 const radio = ref('0')
+
+
 const submit = () => {
   if (serviceTitle.value == null || serviceDesc.value == null || serviceComm.value == null) {
     ElMessage.closeAll();
@@ -110,13 +114,20 @@ const submit = () => {
 }
 // 对接接口
 const data = ref({})
+const loading = ref(true)
 const getList = async () => {
   const res = await getQuickCommandList()
-  data.value = res.data
+  if (res.code == 1) {
+    setInterval(() => {
+      loading.value = false
+    }, 1000)
+    data.value = res.data
+  }
 }
 onMounted(() => {
   getList()
 })
+
 const handleUpdateData = (new_data: { title: string; desc: string; command: string; permit: string; id: string; }) => {
   for (let i = 0; i < data.value.length; i++) {
     if (data.value[i].id == new_data.id) {
