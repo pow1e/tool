@@ -4,11 +4,11 @@
  * @Author: William
  * @Date: 2023-08-02 16:17:35
  * @LastEditors: William
- * @LastEditTime: 2023-08-03 11:14:42
+ * @LastEditTime: 2023-08-04 15:25:09
  */
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { getProductList, CardInfo } from 'services/command';
+import { getCommandList, CardInfo } from 'services/command';
 
 const namespace = 'card';
 
@@ -27,12 +27,13 @@ const initialState: IInitialState = {
 export const getList = createAsyncThunk(
   `/${namespace}`,
   async () => {
-    const result = await getProductList();
+    const result = await getCommandList();
     return {
       list: result?.list
     };
   },
 );
+
 
 const listCardSlice = createSlice({
   name: namespace,
@@ -58,7 +59,7 @@ const listCardSlice = createSlice({
   },
 });
 
-export const {  switchPageLoading } = listCardSlice.actions;
+export const { switchPageLoading } = listCardSlice.actions;
 
 export const selectListCard = (state: RootState) => state.card;
 

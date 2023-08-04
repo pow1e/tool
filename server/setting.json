@@ -1,11 +1,1 @@
-{
-  "shortcut": [
-    {
-      "id": "2ede742b-b9ce-47fb-9e7f-6089656a34ba",
-      "name": "123123",
-      "description": "12312",
-      "directives": "asdasdasdas",
-      "type": "1"
-    }
-  ]
-}
+{"shortcut":[{"id":"c2272459-4bec-4265-8d66-fdafb7af8a24","name":"123","description":"12311","directives":"123","type":"0"},{"id":"5bb5dc75-7038-44c4-8928-cbfc91a5b3c9","name":"MySQL","description":"mysql 测试","directives":"net start mysql3306","type":"1"}]}
