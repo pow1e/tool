@@ -4,27 +4,27 @@
  * @Author: William
  * @Date: 2023-08-02 16:17:35
  * @LastEditors: William
- * @LastEditTime: 2023-08-04 16:18:33
+ * @LastEditTime: 2023-08-07 15:34:54
  */
-import React, { useState } from 'react';
-import { Card, Dropdown, Button, MessagePlugin, Form, Dialog, Radio, Input, Popconfirm } from 'tdesign-react';
+import React from 'react';
+import { Card, Dropdown, Button, Form, Dialog, Radio, Input } from 'tdesign-react';
 import { Icon, PlayCircleFilledIcon } from 'tdesign-icons-react';
 import { CardInfo, changeCommand, delCommand, runCommand } from 'services/command';
 import Style from './CommandCard.module.less';
 import FormItem from 'tdesign-react/es/form/FormItem';
-
+import { success, error } from 'components/Notification';
 const CommandCard = ({ info, pageInit }: { info: CardInfo; pageInit: any }) => {
   const onStart = () => {
     runCommand(info?.id).result.then((res) => {
       const code = res.code.toString();
       const msg = res.msg.toString();
       if (code === '1') {
-        MessagePlugin.success('启动成功');
+        success(msg);
       }
     }
     ).catch((err) => {
       const msg = err.msg.toString();
-      MessagePlugin.error(`启动失败，返回信息：${msg}`);
+      error(msg);
     });
   }
   const [forms] = Form.useForm();
@@ -36,19 +36,21 @@ const CommandCard = ({ info, pageInit }: { info: CardInfo; pageInit: any }) => {
     type: Form.useWatch('type', forms)
   };
   const onSubmit = () => {
+    if (data.name === info?.name && data.description === info?.description && data.directives === info?.directives && data.type === info?.type) {
+      error('未修改任何内容');
+      return;
+    }
     changeCommand(data).result.then((res) => {
       const code = res.code.toString();
       const msg = res.msg.toString();
       if (code === '1') {
-        MessagePlugin.success('修改成功');
-      } else {
-        MessagePlugin.error(msg);
+        success(msg);
       }
       setVisible(false);
       pageInit();
     }).catch((err) => {
       const msg = err.msg.toString();
-      MessagePlugin.error(`启动失败，返回信息：${msg}`);
+      error(msg);
     });
   };
   const delDataSingle = {
@@ -59,15 +61,13 @@ const CommandCard = ({ info, pageInit }: { info: CardInfo; pageInit: any }) => {
       const code = res.code.toString();
       const msg = res.msg.toString();
       if (code === '1') {
-        MessagePlugin.success('删除成功');
-      } else {
-        MessagePlugin.error(msg);
+        success(msg);
       }
       setDelVisible(false);
       pageInit();
     }).catch((err) => {
       const msg = err.msg.toString();
-      MessagePlugin.error(`启动失败，返回信息：${msg}`);
+      error(msg);
     });
   }
   const [visible, setVisible] = React.useState(false);
@@ -134,16 +134,16 @@ const CommandCard = ({ info, pageInit }: { info: CardInfo; pageInit: any }) => {
         destroyOnClose={true}
       >
         <Form labelAlign="top" form={forms}>
-          <FormItem label="服务名称" name="name" initialData={info?.name}>
+          <FormItem label="服务名称" name="name" initialData={info?.name} rules={[{ required: true, message: '请填写服务名称', type: 'error' }]}>
             <Input />
           </FormItem>
-          <FormItem label="服务描述" name="description" initialData={info?.description}>
+          <FormItem label="服务描述" name="description" initialData={info?.description} rules={[{ required: true, message: '请填写服务描述', type: 'error' }]}>
             <Input />
           </FormItem>
-          <FormItem label="启动命令" name="directives" initialData={info?.directives}>
+          <FormItem label="启动命令" name="directives" initialData={info?.directives} rules={[{ required: true, message: '请填写启动命令', type: 'error' }]}>
             <Input />
           </FormItem>
-          <FormItem label="权限" name="type" initialData={info?.type}>
+          <FormItem label="权限" name="type" initialData={info?.type} rules={[{ required: true, message: '请选择启动权限', type: 'error' }]}>
             <Radio.Group>
               <Radio value="0">普通用户</Radio>
               <Radio value="1">管理员</Radio>
