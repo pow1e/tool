@@ -4,6 +4,7 @@ import (
 	"go.uber.org/zap"
 	"tools/core"
 	"tools/global"
+	"tools/model/system"
 )
 
 // @title                       Swagger Example API
@@ -16,5 +17,6 @@ func main() {
 	global.Log = core.InitZap()  // 初始化Zap
 	zap.ReplaceGlobals(global.Log)
 	core.InitRainbowTable()
+	system.InitAlgorithmMap()
 	core.RunServer()
 }

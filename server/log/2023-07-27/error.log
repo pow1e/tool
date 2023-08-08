@@ -1,2 +1,0 @@
-[tools/server]2023/07/27 - 13:13:25.775	[31merror[0m	D:/Language/Go/Go_code/src/tool/server/pkg/utils/rainbowTable.go:25	Error opening file: open D:\Language\Go\Go_code\src\tool\server\static\dict\md5.txt: The system cannot find the file specified.
-[tools/server]2023/07/27 - 13:13:25.777	[31merror[0m	D:/Language/Go/Go_code/src/tool/server/api/v1/md5.go:52	Error buildingRainbowTable: open D:\Language\Go\Go_code\src\tool\server\static\dict\md5.txt: The system cannot find the file specified.

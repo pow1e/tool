@@ -4,29 +4,23 @@ import "sync"
 
 // 调用方法的单例模式
 var (
-	UserSrvImpl     *UserSrv
 	SysSrvImpl      *SysSrv
 	ShortCutSrvImpl *ShortCutSrv
+	ScanImpl        *ScanSrv
+	AlgorithmImpl   *AlgorithmSrv
 )
 
 var (
-	UserSrvOnce     sync.Once
 	SysSrvOnce      sync.Once
 	ShortCutSrvOnce sync.Once
+	ScanSrvOnce     sync.Once
+	AlgorithmOnce   sync.Once
 )
 
-// 单例模式的结构体
-type UserSrv struct{}
+type ScanSrv struct{}
 type SysSrv struct{}
 type ShortCutSrv struct{}
-
-// GetUserSrv 获取单例模式的UserSrv对象
-func GetUserSrv() *UserSrv {
-	UserSrvOnce.Do(func() {
-		UserSrvImpl = &UserSrv{}
-	})
-	return UserSrvImpl
-}
+type AlgorithmSrv struct{}
 
 // GetSysSrv 获取单例模式的GetSysSrv对象
 func GetSysSrv() *SysSrv {
@@ -42,4 +36,18 @@ func GetShortCutSrv() *ShortCutSrv {
 		ShortCutSrvImpl = &ShortCutSrv{}
 	})
 	return ShortCutSrvImpl
+}
+
+func GetScanSrv() *ScanSrv {
+	ScanSrvOnce.Do(func() {
+		ScanImpl = &ScanSrv{}
+	})
+	return ScanImpl
+}
+
+func GetAlgorithmSrv() *AlgorithmSrv {
+	AlgorithmOnce.Do(func() {
+		AlgorithmImpl = &AlgorithmSrv{}
+	})
+	return AlgorithmImpl
 }

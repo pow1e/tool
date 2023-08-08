@@ -15,6 +15,8 @@ func Routers() *gin.Engine {
 	{
 		ApiGroupEnter.InitShorCutRouter(DefaultPrefix)
 		ApiGroupEnter.InitMd5Router(DefaultPrefix)
+		ApiGroupEnter.InitScan(DefaultPrefix)
+		ApiGroupEnter.InitAlgorithmRouter(DefaultPrefix)
 	}
 	return r
 }
