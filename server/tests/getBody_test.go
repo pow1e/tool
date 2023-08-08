@@ -12,7 +12,7 @@ import (
 
 func TestBody(t *testing.T) {
 
-	req, err := http.NewRequest("GET", "http://8.134.126.146:6379", nil)
+	req, err := http.NewRequest("GET", "http://8.134.126.146:9000", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -39,11 +39,33 @@ func TestBody(t *testing.T) {
 		t.Log(err)
 	}
 	title := gettitle(body)
-
 	t.Log(string(body))
+	// map[Accept-Ranges:[bytes] Cache-Control:[no-cache, no-store, must-revalidate] Content-Type:[text/html; charset=utf-8] Date:[Tue, 08 Aug 2023 08:11:47 GMT] Last-Modified:[Mon, 22 May 2023 08:32:44 GMT] Vary:[Accept-Encoding] X-Content-Type-Options:[nosniff] X-Xss-Protection:[1; mode=block]]
+	t.Log(resp.Header.Get("Content-Type"))
+	t.Log(resp.Header.Get("Last-Modified"))
+	t.Log(resp.Header)
 	t.Log(resp.Status)
+	t.Log(resp.Request)
+	t.Log(resp.ContentLength)
+	t.Log(resp.TLS)
+	t.Log(resp.TransferEncoding)
+	t.Log(resp.Proto)
 	t.Log(resp.StatusCode)
 	t.Log(title)
+	// &http.Response{Status:"200 OK", StatusCode:200, Proto:"HTTP/1.1", ProtoMajor:1, ProtoMinor:1, Header:http.Header{"Accept-Ranges":[]string{"bytes"},
+	// "Cache-Control":[]string{"no-cache, no-store, must-revalidate"},
+	// "Content-Type":[]string{"text/html; charset=utf-8"},
+	// "Date":[]string{"Tue, 08 Aug 2023 12:07:49 GMT"},
+	// "Last-Modified":[]string{"Mon, 22 May 2023 08:32:44 GMT"},
+	// "Vary":[]string{"Accept-Encoding"},
+	// "X-Content-Type-Options":[]string{"nosniff"},
+	// "X-Xss-Protection":[]string{"1; mode=block"}},
+	// Body:(*http.gzipReader)(0xc000184040), ContentLength:-1, TransferEncoding:[]string{"chunked"},
+	// Close:false, Uncompressed:true,
+	// Trailer:http.Header(nil),
+	// Request:(*http.Request)(0xc00013c100),
+	// TLS:(*tls.ConnectionState)(nil)}
+	t.Logf("%#v\n", resp.Header.Get("Date"))
 }
 
 func gettitle(body []byte) (title string) {

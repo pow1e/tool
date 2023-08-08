@@ -44,7 +44,7 @@ func (s *ScanSrv) ScanPort(target *request.PortScan) ([]*system.PortScanResp, er
 			if err == nil {
 				defer conn.Close()
 				writerLock.Lock()
-				target := system.BasePortScanner(ip, port)
+				target := system.BasePortScanner(true, ip, port)
 				target.BuildInfoScan()
 				scanners = append(scanners, target)
 				writerLock.Unlock()

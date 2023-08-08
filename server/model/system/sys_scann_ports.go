@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"regexp"
+	"strconv"
 	"strings"
 	"sync"
 )
@@ -21,14 +22,23 @@ type PortScanResp struct {
 }
 
 type PortInfo struct {
-	ScanUrl string `json:"url"`
-	Title   string `json:"title"`
-	Code    int    `json:"code"`
+	ScanUrl                string   `json:"Url"`    // 扫描url
+	Status                 string   `json:"Status"` // http协议+状态码
+	Title                  string   `json:"Title"`  // 标题
+	Data                   string   `json:"Data"`
+	ContentType            string   `json:"Content-Type"`  // 内容格式
+	LastModified           string   `json:"Last-Modified"` // 上次修改时间
+	X_Content_Type_Options string   `json:"X-Content-Type-Options"`
+	X_Xss_Protection       string   `json:"X-Xss-Protection"`
+	Server                 string   `json:"Server"`
+	TLS                    string   `json:"TLS"`
+	TransferEncoding       []string `json:"Transfer-Encoding"`
+	X_Powered_By           string   `json:"X-Powered-By"`
 }
 
-func BasePortScanner(ip string, port int) *PortScanResp {
+func BasePortScanner(open bool, ip string, port int) *PortScanResp {
 	return &PortScanResp{
-		IsOpen: true,
+		IsOpen: open,
 		Port:   port,
 		PortInfo: &PortInfo{
 			ScanUrl: fmt.Sprintf("http://%s:%d", ip, port),
@@ -53,11 +63,19 @@ func (p *PortScanResp) BuildInfoScan() {
 		data, _ := ioutil.ReadAll(resp.Body)
 		lock.Lock()
 		p.PortInfo.Title = gettitle(data)
-		p.PortInfo.Code = resp.StatusCode
-		lock.Unlock()
+		p.PortInfo.Status = resp.Proto + " " + resp.Status
+		p.PortInfo.Data = resp.Header.Get("Date")
+		p.PortInfo.ContentType = resp.Header.Get("Content-Type")
+		p.PortInfo.LastModified = resp.Header.Get("Last-Modified")
+		p.PortInfo.X_Content_Type_Options = resp.Header.Get("X-Content-Type-Options")
+		p.PortInfo.X_Xss_Protection = resp.Header.Get("X-Xss-Protection")
+		p.PortInfo.Server = resp.Header.Get("Server")
+		p.PortInfo.TLS = resp.Header.Get("TLS")
+		p.PortInfo.TransferEncoding = resp.TransferEncoding
+		p.PortInfo.X_Powered_By = resp.Header.Get("X-Powered-By")
 	} else {
 		lock.Lock()
-		p.PortInfo.Code = http.StatusBadGateway
+		p.PortInfo.Status = strconv.Itoa(http.StatusBadGateway)
 		lock.Unlock()
 	}
 }

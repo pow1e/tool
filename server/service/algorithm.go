@@ -1,6 +1,7 @@
 package service
 
 import (
+	"errors"
 	"fmt"
 	"tools/model/system"
 	resp "tools/model/system/response"
@@ -9,6 +10,9 @@ import (
 
 func (a *AlgorithmSrv) Encrypt(req *system.AlgorithmReq) (map[system.Algorithm]interface{}, error) {
 	m := make(map[system.Algorithm]interface{})
+	if req.Plaintext == "" {
+		return nil, errors.New("加密明文不能为空")
+	}
 	for algorithm, newFunc := range system.AlgorithmMap {
 		passFunc := newFunc(req.Key)
 		switch algorithm {

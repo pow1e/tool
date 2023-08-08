@@ -14,8 +14,7 @@ func ScanPort(ctx *gin.Context) {
 		response.FaithWithMessage(consts.PostBodyError, ctx)
 		return
 	}
-	scanSrv := service.GetScanSrv()
-	if resp, err := scanSrv.ScanPort(target); err != nil {
+	if resp, err := service.GetScanSrv().ScanPort(target); err != nil {
 		response.FaithWithMessage(err.Error(), ctx)
 		return
 	} else {
