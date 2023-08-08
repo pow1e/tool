@@ -95,6 +95,7 @@ func DeleteShortcut(ctx *gin.Context) {
 		response.FaithWithMessage(consts.PostBodyError, ctx)
 		return
 	}
+
 	if len(req.Ids) == 0 {
 		response.FaithWithMessage("请正确填写所需要删除的id", ctx)
 		return
