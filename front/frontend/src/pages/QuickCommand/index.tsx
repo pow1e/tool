@@ -4,10 +4,10 @@
  * @Author: William
  * @Date: 2023-08-02 16:17:35
  * @LastEditors: William
- * @LastEditTime: 2023-08-04 16:19:06
+ * @LastEditTime: 2023-08-07 15:46:58
  */
 import React, { useEffect } from 'react';
-import { Row, Col, Button, Input, Loading, MessagePlugin, Form, Radio } from 'tdesign-react';
+import { Row, Col, Button, Input, Loading, Form, Radio } from 'tdesign-react';
 import { SearchIcon } from 'tdesign-icons-react';
 import { useAppDispatch, useAppSelector } from 'modules/store';
 import { selectListCard, getList } from 'modules/list/card';
@@ -16,7 +16,7 @@ import Style from './index.module.less';
 import Dialog from 'tdesign-react/es/dialog';
 import FormItem from 'tdesign-react/es/form/FormItem';
 import { addCommand } from 'services/command';
-
+import { success, error } from 'components/Notification';
 const CardList = () => {
   const dispatch = useAppDispatch();
   const pageState = useAppSelector(selectListCard);
@@ -32,7 +32,6 @@ const CardList = () => {
       getList(),
     );
   };
-
   useEffect(() => {
     pageInit();
   }, []);
@@ -42,20 +41,21 @@ const CardList = () => {
     setVisible(true);
   };
   const onSubmit = () => {
+    if (data.name === undefined || data.description === undefined || data.directives === undefined || data.type === undefined) {
+      error('请填写完整信息');
+      return;
+    }
     addCommand(data).result.then((res) => {
       const code = res.code.toString();
       const msg = res.msg.toString();
       if (code === '1') {
-        MessagePlugin.success('添加成功');
-      }
-      else {
-        MessagePlugin.error(msg);
+        success(msg);
       }
       setVisible(false);
       pageInit();
     }).catch((err) => {
       const msg = err.msg.toString();
-      MessagePlugin.error(`启动失败，返回信息：${msg}`);
+      error(msg);
     })
   };
   return (
@@ -111,16 +111,16 @@ const CardList = () => {
               labelAlign="top"
               form={form}
             >
-              <FormItem label="服务名称" name="name">
+              <FormItem label="服务名称" name="name" rules={[{ required: true }]}>
                 <Input />
               </FormItem>
-              <FormItem label="服务描述" name="description">
+              <FormItem label="服务描述" name="description" rules={[{ required: true }]}>
                 <Input />
               </FormItem>
-              <FormItem label="启动命令" name="directives">
+              <FormItem label="启动命令" name="directives" rules={[{ required: true }]}>
                 <Input />
               </FormItem>
-              <FormItem label="权限" name="type" initialData={"0"}>
+              <FormItem label="权限" name="type" initialData={"0"} rules={[{ required: true }]}>
                 <Radio.Group>
                   <Radio value="0">普通用户</Radio>
                   <Radio value="1">管理员</Radio>

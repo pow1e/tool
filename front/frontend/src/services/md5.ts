@@ -18,3 +18,14 @@ export const getdecrypt = (data: any) => {
     result
   }
 }
+
+export const getencrypt = (data: any) => {
+  const result = request({
+    url: 'api/v1/md5/encrypt',
+    method: 'post',
+    data: data
+  })
+  return {
+    result
+  }
+}
