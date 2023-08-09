@@ -2,12 +2,15 @@ package tests
 
 import (
 	"errors"
+	"fmt"
 	"io"
 	"io/ioutil"
+	"net"
 	"net/http"
 	"regexp"
 	"strings"
 	"testing"
+	"time"
 )
 
 func TestBody(t *testing.T) {
@@ -85,4 +88,13 @@ func gettitle(body []byte) (title string) {
 		title = "None"
 	}
 	return
+}
+
+func TestScan(t *testing.T) {
+	conn, err := net.DialTimeout("tcp", fmt.Sprintf("%s:%d", "127.0.0.1", 9010), time.Duration(0)*time.Second)
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log(conn)
+
 }

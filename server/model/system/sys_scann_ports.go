@@ -47,7 +47,7 @@ func BasePortScanner(open bool, ip string, port int) *PortScanResp {
 }
 
 // BuildInfoScan 收集信息
-func (p *PortScanResp) BuildInfoScan() {
+func (p *PortScanResp) BuildInfoScan() *PortScanResp {
 	var lock sync.Mutex
 
 	req, _ := http.NewRequest("GET", p.PortInfo.ScanUrl, nil)
@@ -78,6 +78,7 @@ func (p *PortScanResp) BuildInfoScan() {
 		p.PortInfo.Status = strconv.Itoa(http.StatusBadGateway)
 		lock.Unlock()
 	}
+	return p
 }
 
 func gettitle(body []byte) (title string) {
