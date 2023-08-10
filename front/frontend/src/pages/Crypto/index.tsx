@@ -4,17 +4,25 @@
  * @Author: William
  * @Date: 2023-08-03 16:30:49
  * @LastEditors: William
- * @LastEditTime: 2023-08-07 15:12:22
+ * @LastEditTime: 2023-08-10 08:47:18
  */
 import { error, success } from 'components/Notification';
 import { useState } from 'react';
-import { getdecrypt, getencrypt } from 'services/md5';
+import { getdecrypt, getencrypt } from 'services/crypto';
 import { Radio, Space, Card, Input, Button, Form, Select } from 'tdesign-react';
 const { FormItem } = Form;
 
 export default function RadioExample() {
   const [move, selectMove] = useState('encrypt');
   const [encryptValue, setEncryptValue] = useState('');
+  const [value, setValue] = useState('0');
+  const handleChange = (value: any) => {
+    setValue(value);
+  };
+  const [keyValue, setKeyValue] = useState('');
+  const keyInputChange = (e: any) => {
+    setKeyValue(e);
+  };
   const addRules = {
     name: [
       {
@@ -49,10 +57,15 @@ export default function RadioExample() {
     setEncryptValue(e);
   };
   const encryptData = {
-    "plaintext": encryptValue
+    "plaintext": encryptValue,
+    "key": keyValue
   }
   const [form] = Form.useForm();
   const onEncrypt = () => {
+    if (encryptValue === '') {
+      error('加密内容不能为空');
+      return;
+    }
     getencrypt(encryptData).result.then((res) => {
       const code: string = res.code.toString();
       const result: any = res.data;
@@ -60,10 +73,12 @@ export default function RadioExample() {
       if (code === '1') {
         success(msg);
         form.setFieldsValue({
-          '16lowercase': result['16lowercase'],
-          '16uppercase': result['16uppercase'],
-          '32lowercase': result['32lowercase'],
-          '32uppercase': result['32uppercase']
+          '16lowercase': result.md5['16lowercase'],
+          '16uppercase': result.md5['16uppercase'],
+          '32lowercase': result.md5['32lowercase'],
+          '32uppercase': result.md5['32uppercase'],
+          'base64': result.base64,
+          'aes': result.aes,
         })
       }
     }
@@ -79,7 +94,6 @@ export default function RadioExample() {
     ciphertext: inputValue,
   }
   const onDecrypt = (e: any) => {
-    if (e.vali)
       getdecrypt(data).result.then((res) => {
         const code = res.code.toString();
         const msg = res.msg.toString();
@@ -110,15 +124,12 @@ export default function RadioExample() {
         value: '2',
       }
     ]
-  const [value, setValue] = useState('0');
-  const handleChange = (value: any) => {
-    setValue(value);
-  };
+
   return (
     <Card
       title={
         <Space direction="vertical">
-          <Radio.Group variant="primary-filled" size="large" value={move} onChange={(value) => selectMove(value)}>
+          <Radio.Group variant="primary-filled" value={move} onChange={(value) => selectMove(value)}>
             <Radio.Button value="encrypt">加密</Radio.Button>
             <Radio.Button value="decrypt">解密</Radio.Button>
           </Radio.Group>
@@ -127,7 +138,6 @@ export default function RadioExample() {
       bordered={false}
       actions={move === 'decrypt' ? (
         <Select
-          size="large"
           options={options}
           value={value}
           onChange={handleChange}
@@ -139,14 +149,19 @@ export default function RadioExample() {
       {move === 'encrypt' ? (
         <div>
           <Input
-            placeholder="请输入内容"
+            placeholder="请输入需要加密的内容"
             align="center"
-            size="large"
             value={encryptValue}
             onChange={encryptInputChange}
           />
+          <Input
+            placeholder="请输入自定义 Key (用于加密AES - 可选)"
+            align="center"
+            value={keyValue}
+            onChange={keyInputChange}
+            style={{ margin: '20px 0 0 0' }}
+          />
           <Button
-            size="large"
             style={{ width: "100%", margin: '20px 0 20px 0' }}
             onClick={onEncrypt}
           >加 密
@@ -157,28 +172,40 @@ export default function RadioExample() {
             rules={addRules}
           >
             <FormItem
-              label="16位小写"
+              label="MD5 16位小写"
               name="16lowercase"
             >
-              <Input size="large" placeholder="密文将在这里显示" readonly={true} align="center" />
+              <Input placeholder="密文将在这里显示" readonly={true} align="center" />
             </FormItem>
             <FormItem
-              label="16位大写"
+              label="MD5 16位大写"
               name="16uppercase"
             >
-              <Input size="large" placeholder="密文将在这里显示" readonly={true} align="center" />
+              <Input placeholder="密文将在这里显示" readonly={true} align="center" />
             </FormItem>
             <FormItem
-              label="32位小写"
+              label="MD5 32位小写"
               name="32lowercase"
             >
-              <Input size="large" placeholder="密文将在这里显示" readonly={true} align="center" />
+              <Input placeholder="密文将在这里显示" readonly={true} align="center" />
             </FormItem>
             <FormItem
-              label="32位大写"
+              label="MD5 32位大写"
               name="32uppercase"
             >
-              <Input size="large" placeholder="密文将在这里显示" readonly={true} align="center" />
+              <Input placeholder="密文将在这里显示" readonly={true} align="center" />
+            </FormItem>
+            <FormItem
+              label="Base64"
+              name="base64"
+            >
+              <Input placeholder="密文将在这里显示" readonly={true} align="center" />
+            </FormItem>
+            <FormItem
+              label="AES"
+              name="aes"
+            >
+              <Input placeholder="密文将在这里显示" readonly={true} align="center" />
             </FormItem>
           </Form>
         </div>
@@ -187,12 +214,10 @@ export default function RadioExample() {
           <Input
             placeholder="请输入内容"
             align="center"
-            size="large"
             value={inputValue}
             onChange={handleInputChange}
           />
           <Button
-            size="large"
             style={{ margin: '20px 0 20px 0', width: '100%' }}
             onClick={onDecrypt}
           >解 密
@@ -200,7 +225,6 @@ export default function RadioExample() {
           <Input
             placeholder="原文将在这里显示"
             align="center"
-            size="large"
             readonly={true}
             value={decryptValue}
           />
