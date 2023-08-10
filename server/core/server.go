@@ -19,7 +19,7 @@ type server interface {
 	Shutdown(ctx context.Context) error
 }
 
-var prevSrv server // 使用你定义的 server 接口作为类型来保存上一次的服务器实例
+var prevSrv server //  server 接口作为类型来保存上一次的服务器实例
 
 func RunServer() {
 	fmt.Println(`
