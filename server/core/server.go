@@ -10,7 +10,7 @@ import (
 	"os/signal"
 	"time"
 	"tools/global"
-	"tools/router"
+	"tools/initialize"
 )
 
 // 定义sever接口 实现ListenAndServe方法
@@ -18,6 +18,8 @@ type server interface {
 	ListenAndServe() error
 	Shutdown(ctx context.Context) error
 }
+
+var prevSrv server //  server 接口作为类型来保存上一次的服务器实例
 
 func RunServer() {
 	fmt.Println(`
@@ -31,16 +33,34 @@ func RunServer() {
                                                        
                                                        
                                                        `)
-	routers := router.Routers() // 初始化路由
+	routers := initialize.Routers() // 初始化路由
 	address := fmt.Sprintf(":%s", global.Config.System.Addr)
+
+	// 先关闭上一次的服务器（如果存在）
+	if prevSrv != nil {
+		fmt.Println("Shutting down the previous server...")
+		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		defer cancel()
+		if err := prevSrv.Shutdown(ctx); err != nil {
+			// 处理错误，可以记录日志等
+			fmt.Println("Previous server shutdown error:", err)
+		}
+		fmt.Println("Previous server shutdown complete.")
+	}
+
+	// 创建新的服务器实例
 	srv := initServer(address, routers)
+
 	go func() {
-		// 服务连接
+		// 启动新的服务器
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			global.Log.Error(err.Error())
 		}
 	}()
-	global.Log.Info("server run success on ", zap.String("address", address))
+	global.Log.Info("Server run success on ", zap.String("address", address))
+
+	// 将当前服务器实例赋值给 prevSrv，以备下次关闭使用
+	prevSrv = srv
 
 	// 等待中断信号以优雅地关闭服务器（设置 5 秒的超时时间）
 	quit := make(chan os.Signal)
@@ -54,5 +74,5 @@ func RunServer() {
 		log.Fatal("Server Shutdown:", err)
 	}
 
-	global.Log.Info("server exiting ...")
+	global.Log.Info("Server exiting ...")
 }

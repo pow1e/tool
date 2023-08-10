@@ -27,3 +27,5 @@
 *.iml
 out
 gen
+*.log
+server/static/dict/md5.txt

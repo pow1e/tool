@@ -3,11 +3,19 @@ import axios from 'axios';
 const env = import.meta.env.MODE || 'development';
 
 const SUCCESS_CODE = 1;
-const TIMEOUT = 5000;
+
+declare module "axios" {
+  interface AxiosResponse<T = any> {
+    errorinfo: string;
+    code: number;
+    data: T;
+  }
+  export function create(config?: AxiosRequestConfig): AxiosInstance;
+}
+
 
 export const instance = axios.create({
   baseURL: '',
-  timeout: TIMEOUT,
   withCredentials: true,
 });
 

@@ -1,16 +1,9 @@
-/*
- * @Description:
- * @version: 1.0.0
- * @Author: William
- * @Date: 2023-08-02 09:33:32
- * @LastEditors: William
- * @LastEditTime: 2023-08-02 15:40:56
- */
 import React from 'react';
 import { BrowserRouterProps } from 'react-router-dom';
 import dashboard from './modules/dashboard';
 import quickcommand from './modules/quickcommand';
-import result from './modules/result';
+import crypto from './modules/crypto';
+import portscan from './modules/portscan';
 
 import otherRoutes from './modules/others';
 
@@ -47,6 +40,6 @@ const routes: IRouter[] = [
   },
 ];
 
-const allRoutes = [...routes, ...dashboard, , ...quickcommand, ...result, ...otherRoutes];
+const allRoutes = [...routes, ...dashboard, , ...quickcommand, ...crypto, ...portscan, ...otherRoutes];
 
 export default allRoutes;

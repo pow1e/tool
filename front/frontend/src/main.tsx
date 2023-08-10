@@ -1,11 +1,4 @@
-/*
- * @Description:
- * @version: 1.0.0
- * @Author: William
- * @Date: 2023-08-02 16:17:35
- * @LastEditors: William
- * @LastEditTime: 2023-08-02 16:57:28
- */
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';

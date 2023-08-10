@@ -1,11 +1,3 @@
-/*
- * @Description:
- * @version: 1.0.0
- * @Author: William
- * @Date: 2023-08-02 16:17:35
- * @LastEditors: William
- * @LastEditTime: 2023-08-03 10:50:09
- */
 import path from 'path';
 import { loadEnv } from 'vite';
 import { viteMockServe } from 'vite-plugin-mock';
@@ -63,7 +55,7 @@ export default (params) => {
     },
 
     server: {
-      host: 'localhost',
+      host: '0.0.0.0',
       port: 8081,
       open: false,
       proxy: {

@@ -2,7 +2,7 @@
 system:
   env: public
   addr: 8080
-  router-prefix: ""
+  router-prefix: 'api/v1'
 
 # 日志配置
 zap:
