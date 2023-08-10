@@ -4,7 +4,7 @@
  * @Author: William
  * @Date: 2023-08-08 10:47:01
  * @LastEditors: William
- * @LastEditTime: 2023-08-09 16:11:35
+ * @LastEditTime: 2023-08-10 08:59:56
  */
 import React from 'react';
 import { Card, Input, Button, Space, Row, Col, RangeInput, Loading } from 'tdesign-react';
@@ -57,7 +57,7 @@ const CardList = () => {
         const data = {
           ip: ipaddr,
           timeout: Number(timeout),
-          ports: ports,
+          ports: [Number(ports[0]), Number(ports[1])]
         }
         getInfoList(data)
           .then((res) => {
