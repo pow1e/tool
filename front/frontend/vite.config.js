@@ -4,7 +4,7 @@
  * @Author: William
  * @Date: 2023-08-02 16:17:35
  * @LastEditors: William
- * @LastEditTime: 2023-08-03 10:50:09
+ * @LastEditTime: 2023-08-10 09:11:06
  */
 import path from 'path';
 import { loadEnv } from 'vite';
@@ -63,7 +63,7 @@ export default (params) => {
     },
 
     server: {
-      host: 'localhost',
+      host: '0.0.0.0',
       port: 8081,
       open: false,
       proxy: {
