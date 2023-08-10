@@ -2,32 +2,32 @@
  * @Description:
  * @version: 1.0.0
  * @Author: William
- * @Date: 2023-08-02 16:17:35
+ * @Date: 2023-08-08 16:54:57
  * @LastEditors: William
- * @LastEditTime: 2023-08-08 16:57:17
+ * @LastEditTime: 2023-08-08 16:59:54
  */
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { getCommandList, CardInfo } from 'services/command';
+import { InfoCard, getInfoList } from 'services/portscan';
 
-const namespace = 'card';
+const namespace = 'portscan';
 
 interface IInitialState {
   pageLoading: boolean;
   loading: boolean;
-  CommandList: CardInfo[];
+  InfoList: InfoCard[];
 }
 
 const initialState: IInitialState = {
   pageLoading: true,
   loading: true,
-  CommandList: [],
+  InfoList: [],
 };
 
 export const getList = createAsyncThunk(
   `/${namespace}`,
-  async () => {
-    const result = await getCommandList();
+  async (data: any) => {
+    const result = await getInfoList(data);
     return {
       list: result?.list
     };
@@ -51,7 +51,7 @@ const listCardSlice = createSlice({
       .addCase(getList.fulfilled, (state, action) => {
         state.loading = false;
         state.pageLoading = false;
-        state.CommandList = action.payload?.list || [];
+        state.InfoList = action.payload?.list || [];
       })
       .addCase(getList.rejected, (state) => {
         state.loading = false;
@@ -61,6 +61,6 @@ const listCardSlice = createSlice({
 
 export const { switchPageLoading } = listCardSlice.actions;
 
-export const selectListCard = (state: RootState) => state.card;
+export const selectInfoCard = (state: RootState) => state.card;
 
 export default listCardSlice.reducer;
