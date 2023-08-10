@@ -1,11 +1,3 @@
-/*
- * @Description:
- * @version: 1.0.0
- * @Author: William
- * @Date: 2023-08-02 09:33:32
- * @LastEditors: William
- * @LastEditTime: 2023-08-08 10:47:27
- */
 import React from 'react';
 import { BrowserRouterProps } from 'react-router-dom';
 import dashboard from './modules/dashboard';
