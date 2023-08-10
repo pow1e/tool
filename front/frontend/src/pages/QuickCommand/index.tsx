@@ -81,7 +81,7 @@ const CardList = () => {
               gutter={[16, 24]}
               style={{ margin: '0 0' }}
             >
-              {pageState.productList.map((info, index) => (
+              {pageState.CommandList.map((info, index) => (
                 <Col key={index} span={6} lg={4}>
                   <CommandCard info={info} pageInit={pageInit} />
                 </Col>
