@@ -1,9 +1,16 @@
+/*
+ * @Description:
+ * @version: 1.0.0
+ * @Author: William
+ * @Date: 2023-08-03 16:30:49
+ * @LastEditors: William
+ * @LastEditTime: 2023-08-08 17:12:51
+ */
 import axios from 'axios';
 
 const env = import.meta.env.MODE || 'development';
 
 const SUCCESS_CODE = 1;
-const TIMEOUT = 5000;
 
 declare module "axios" {
   interface AxiosResponse<T = any> {
@@ -17,7 +24,6 @@ declare module "axios" {
 
 export const instance = axios.create({
   baseURL: '',
-  timeout: TIMEOUT,
   withCredentials: true,
 });
 
